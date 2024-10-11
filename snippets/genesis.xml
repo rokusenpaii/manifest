@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="GenesisOS"
+           fetch="https://github.com/GenesisOS-Staging"
+           revision="verve" />
+
+  <remote  name="GenesisOS-Gitea"
+           fetch="https://gitea.com/GenesisOS-Staging"
+           revision="verve" />
+
+  <!-- art -->
+  <project path="art" name="art" groups="pdk" remote="GenesisOS" />
+
+  <!-- bionic -->
+  <project path="bionic" name="bionic" groups="pdk" remote="GenesisOS" />
+
+  <!-- bootable -->
+  <project path="bootable/deprecated-ota" name="bootable_deprecated-ota" groups="pdk-cw" remote="GenesisOS" />
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="GenesisOS" />
+
+  <!-- build -->
+  <project path="build/make" name="build" groups="pdk,sysui-studio" remote="GenesisOS" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+    <linkfile src="bazel.WORKSPACE" dest="WORKSPACE" />
+    <linkfile src="bazel.BUILD" dest="BUILD" />
+  </project>
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="GenesisOS" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- development -->
+  <project path="development" name="development" groups="developers,pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+
+  <!-- device -->
+  <project path="device/generic/common" name="device_generic_common" groups="pdk" remote="GenesisOS" />
+
+  <!-- external -->
+  <project path="external/ant-wireless/ant_client" name="external_ant-wireless_ant_client" groups="qcom" remote="GenesisOS" />
+  <project path="external/ant-wireless/ant_native" name="external_ant-wireless_ant_native" groups="qcom" remote="GenesisOS" />
+  <project path="external/ant-wireless/ant_service" name="external_ant-wireless_ant_service" groups="qcom" remote="GenesisOS" />
+  <project path="external/ant-wireless/hidl" name="external_ant-wireless_hidl" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="external/arm-trusted-firmware" name="external_arm-trusted-firmware" groups="pdk" remote="GenesisOS" />
+  <project path="external/avb" name="external_avb" groups="pdk" remote="GenesisOS" />
+  <project path="external/bash" name="external_bash" remote="GenesisOS" />
+  <project path="external/cronet" name="external_cronet" groups="pdk" remote="GenesisOS" />
+  <project path="external/dtc" name="external_dtc" groups="pdk" remote="GenesisOS" />
+  <project path="external/e2fsprogs" name="external_e2fsprogs" groups="pdk" remote="GenesisOS" />
+  <project path="external/exfatprogs" name="external_exfatprogs" remote="GenesisOS" />
+  <project path="external/gptfdisk" name="external_gptfdisk" groups="pdk" remote="GenesisOS" />
+  <project path="external/htop" name="external_htop" remote="GenesisOS" />
+  <project path="external/json-c" name="external_json-c" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="external/libncurses" name="external_libncurses" remote="GenesisOS" />
+  <project path="external/mksh" name="external_mksh" groups="pdk" remote="GenesisOS" />
+  <project path="external/nano" name="external_nano" remote="GenesisOS" />
+  <project path="external/ntfs-3g" name="external_ntfs-3g" remote="GenesisOS" />
+  <project path="external/openssh" name="external_openssh" groups="pdk" remote="GenesisOS" />
+  <project path="external/robolectric" name="external_robolectric" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="GenesisOS" />
+  <project path="external/rsync" name="external_rsync" remote="GenesisOS" />
+  <project path="external/setupcompat" name="external_setupcompat" groups="pdk,sysui-studio" remote="GenesisOS" />
+  <project path="external/tinycompress" name="external_tinycompress" groups="pdk" remote="GenesisOS" />
+  <project path="external/unrar" name="external_unrar" remote="GenesisOS" />
+  <project path="external/vim" name="external_vim" remote="GenesisOS" />
+  <project path="external/zstd" name="external_zstd" remote="GenesisOS" />
+
+  <!-- frameworks -->
+  <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="GenesisOS" />
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="GenesisOS" />
+  <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="GenesisOS" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="GenesisOS" />
+  <project path="frameworks/opt/timezonepicker" name="frameworks_opt_timezonepicker" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+
+  <!-- hardware -->
+  <project path="hardware/broadcom/libbt" name="hardware_broadcom_libbt" groups="pdk" remote="GenesisOS" />
+  <project path="hardware/genesis/compat" name="hardware_genesis_compat" remote="GenesisOS" />
+  <project path="hardware/genesis/interfaces" name="hardware_genesis_interfaces" remote="GenesisOS" />
+  <project path="hardware/google/camera" name="hardware_google_camera" groups="pdk" remote="GenesisOS" />
+  <project path="hardware/google/gchips" name="hardware_google_gchips" groups="pdk-lassen,pdk-gs-arm" remote="GenesisOS" />
+  <project path="hardware/google/graphics/common" name="hardware_google_graphics_common" groups="pdk-lassen,pdk-gs-arm" remote="GenesisOS" />
+  <project path="hardware/google/pixel" name="hardware_google_pixel" groups="generic_fs,pixel,pdk-gs-arm" remote="GenesisOS" />
+  <project path="hardware/google/pixel-sepolicy" name="hardware_google_pixel-sepolicy" groups="generic_fs,pixel" remote="GenesisOS" />
+  <project path="hardware/interfaces" name="hardware_interfaces" groups="pdk,sysui-studio" remote="GenesisOS" />
+  <project path="hardware/libhardware" name="hardware_libhardware" groups="pdk" remote="GenesisOS" />
+  <project path="hardware/qcom/audio" name="hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" remote="GenesisOS" />
+  <project path="hardware/qcom/camera" name="hardware_qcom_camera" groups="qcom,qcom_camera,pdk-qcom" remote="GenesisOS" />
+  <project path="hardware/qcom/data/ipacfg-mgr" name="hardware_qcom_data_ipacfg-mgr" groups="qcom,pdk-qcom" remote="GenesisOS" />
+  <project path="hardware/qcom/display" name="hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" remote="GenesisOS" />
+  <project path="hardware/qcom/gps" name="hardware_qcom_gps" groups="qcom,qcom_gps,pdk-qcom" remote="GenesisOS" />
+  <project path="hardware/qcom/media" name="hardware_qcom_media" groups="qcom,pdk-qcom" remote="GenesisOS" />
+  <project path="hardware/qcom/sm7250/display" name="hardware_qcom_sm7250_display" groups="qcom,qcom_sm7250" remote="GenesisOS" />
+  <project path="hardware/qcom/sm7250/gps" name="hardware_qcom_sm7250_gps" groups="qcom,qcom_sm7250" remote="GenesisOS" >
+    <linkfile dest="hardware/qcom/sm7250/Android.mk" src="os_pickup.mk" />
+    <linkfile dest="hardware/qcom/sm7250/Android.bp" src="os_pickup.bp" />
+  </project>
+  <project path="hardware/qcom/sm7250/media" name="hardware_qcom_sm7250_media" groups="qcom,qcom_sm7250" remote="GenesisOS" />
+  <project path="hardware/qcom/sm8150/data/ipacfg-mgr" name="hardware_qcom_sm8150_data_ipacfg-mgr" groups="qcom,qcom_sm8150" remote="GenesisOS" >
+    <linkfile dest="hardware/qcom/sm8150/Android.mk" src="os_pickup.mk" />
+    <linkfile dest="hardware/qcom/sm8150/Android.bp" src="os_pickup.bp" />
+  </project>
+  <project path="hardware/qcom/sm8150/display" name="hardware_qcom_sm8150_display" groups="qcom,qcom_sm8150" remote="GenesisOS" />
+  <project path="hardware/qcom/sm8150/gps" name="hardware_qcom_sm8150_gps" groups="qcom,qcom_sm8150" remote="GenesisOS" />
+  <project path="hardware/qcom/sm8150/media" name="hardware_qcom_sm8150_media" groups="qcom,qcom_sm8150" remote="GenesisOS" />
+  <project path="hardware/qcom/wlan" name="hardware_qcom_wlan" groups="qcom,qcom_wlan,pdk-qcom" remote="GenesisOS" />
+  <project path="hardware/qcom-caf/bootctrl" name="hardware_qcom_bootctrl" groups="qcom,lanai-vendor" remote="GenesisOS" revision="verve-caf" />
+  <project path="hardware/qcom-caf/bt" name="hardware_qcom_bt" groups="qcom,legacy-qcom" remote="GenesisOS" revision="verve-caf" />
+  <project path="hardware/qcom-caf/common" name="hardware_qcom-caf_common" groups="qcom" remote="GenesisOS" >
+    <!-- add guard for AOSP hardware/qcom dir -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <!-- add guards for CAF repositories -->
+    <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/msm8953/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8953/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm660/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm660/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8450/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8450/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8450/Android.mk" />
+    <linkfile src="os_pickup_audio-ar.mk" dest="hardware/qcom-caf/sm8550/audio/Android.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
+    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8550/Android.mk" />
+  </project>
+  <project path="hardware/qcom-caf/msm8953/audio" name="hardware_qcom_audio" groups="qcom,msm8953" remote="GenesisOS" revision="verve-caf-msm8953" />
+  <project path="hardware/qcom-caf/msm8953/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-msm8953" />
+  <project path="hardware/qcom-caf/msm8953/media" name="hardware_qcom_media" groups="qcom,msm8953" remote="GenesisOS" revision="verve-caf-msm8953" />
+  <project path="hardware/qcom-caf/msm8996/audio" name="hardware_qcom_audio" groups="qcom,legacy-qcom" remote="GenesisOS" revision="verve-caf-msm8996" />
+  <project path="hardware/qcom-caf/msm8996/display" name="hardware_qcom_display" groups="qcom,legacy-qcom" remote="GenesisOS" revision="verve-caf-msm8996" />
+  <project path="hardware/qcom-caf/msm8996/media" name="hardware_qcom_media" groups="qcom,legacy-qcom" remote="GenesisOS" revision="verve-caf-msm8996" />
+  <project path="hardware/qcom-caf/msm8998/audio" name="hardware_qcom_audio" groups="qcom,legacy-qcom" remote="GenesisOS" revision="verve-caf-msm8998" />
+  <project path="hardware/qcom-caf/msm8998/display" name="hardware_qcom_display" groups="qcom,legacy-qcom" remote="GenesisOS" revision="verve-caf-msm8998" />
+  <project path="hardware/qcom-caf/msm8998/media" name="hardware_qcom_media" groups="qcom,legacy-qcom" remote="GenesisOS" revision="verve-caf-msm8998" />
+  <project path="hardware/qcom-caf/sdm660/audio" name="hardware_qcom_audio" groups="qcom,sdm660" remote="GenesisOS" revision="verve-caf-sdm660" />
+  <project path="hardware/qcom-caf/sdm660/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-sdm660" />
+  <project path="hardware/qcom-caf/sdm660/media" name="hardware_qcom_media" groups="qcom,sdm660" remote="GenesisOS" revision="verve-caf-sdm660" />
+  <project path="hardware/qcom-caf/sdm845/audio" name="hardware_qcom_audio" groups="qcom,sdm845" remote="GenesisOS" revision="verve-caf-sdm845" />
+  <project path="hardware/qcom-caf/sdm845/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-sdm845" />
+  <project path="hardware/qcom-caf/sdm845/media" name="hardware_qcom_media" groups="qcom,sdm845" remote="GenesisOS" revision="verve-caf-sdm845" />
+  <project path="hardware/qcom-caf/sm8150/audio" name="hardware_qcom_audio" groups="qcom,msmnile" remote="GenesisOS" revision="verve-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8150/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8150/media" name="hardware_qcom_media" groups="qcom,msmnile" remote="GenesisOS" revision="verve-caf-sm8150" />
+  <project path="hardware/qcom-caf/sm8250/audio" name="hardware_qcom_audio" groups="qcom,kona" remote="GenesisOS" revision="verve-caf-sm8250" />
+  <project path="hardware/qcom-caf/sm8250/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-sm8250" />
+  <project path="hardware/qcom-caf/sm8250/media" name="hardware_qcom_media" groups="qcom,kona" remote="GenesisOS" revision="verve-caf-sm8250" />
+  <project path="hardware/qcom-caf/sm8350/audio" name="hardware_qcom_audio" groups="qcom,lahaina" remote="GenesisOS" revision="verve-caf-sm8350" />
+  <project path="hardware/qcom-caf/sm8350/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-sm8350" />
+  <project path="hardware/qcom-caf/sm8350/media" name="hardware_qcom_media" groups="qcom,lahaina" remote="GenesisOS" revision="verve-caf-sm8350" />
+  <project path="hardware/qcom-caf/sm8450/audio/agm" name="vendor_qcom_opensource_agm" groups="qcom,waipio-vendor" remote="GenesisOS" revision="verve-caf-sm8450" />
+  <project path="hardware/qcom-caf/sm8450/audio/pal" name="vendor_qcom_opensource_arpal-lx" groups="qcom,waipio-vendor" remote="GenesisOS" revision="verve-caf-sm8450" />
+  <project path="hardware/qcom-caf/sm8450/audio/primary-hal" name="hardware_qcom_audio-ar" groups="qcom,waipio-vendor" remote="GenesisOS" revision="verve-caf-sm8450" />
+  <project path="hardware/qcom-caf/sm8450/data-ipa-cfg-mgr" name="vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,waipio-vendor" remote="GenesisOS" revision="verve-caf-sm8450" />
+  <project path="hardware/qcom-caf/sm8450/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-sm8450" />
+  <project path="hardware/qcom-caf/sm8450/media" name="hardware_qcom_media" groups="qcom,waipio-vendor" remote="GenesisOS" revision="verve-caf-sm8450" />
+  <project path="hardware/qcom-caf/sm8550/audio/agm" name="vendor_qcom_opensource_agm" groups="qcom,kailua-audio" remote="GenesisOS" revision="verve-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/audio/pal" name="vendor_qcom_opensource_arpal-lx" groups="qcom,kailua-audio" remote="GenesisOS" revision="verve-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/audio/primary-hal" name="hardware_qcom_audio-ar" groups="qcom,kailua-audio" remote="GenesisOS" revision="verve-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/data-ipa-cfg-mgr" name="vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,kailua-vendor" remote="GenesisOS" revision="verve-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/dataipa" name="vendor_qcom_opensource_dataipa" groups="qcom,kailua-vendor" remote="GenesisOS" revision="verve-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/display" name="hardware_qcom_display" groups="qcom" remote="GenesisOS" revision="verve-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/media" name="hardware_qcom_media" groups="qcom,kailua-vendor" remote="GenesisOS" revision="verve-caf-sm8550" />
+  <project path="hardware/qcom-caf/thermal" name="hardware_qcom_thermal" groups="qcom,lanai-vendor" remote="GenesisOS" />
+  <project path="hardware/qcom-caf/vr" name="hardware_qcom_vr" groups="qcom,legacy-qcom" remote="GenesisOS" />
+  <project path="hardware/qcom-caf/wlan" name="hardware_qcom_wlan" groups="qcom,lanai-vendor" remote="GenesisOS" revision="verve-caf" />
+  <project path="hardware/ril" name="hardware_ril" groups="pdk" remote="GenesisOS" />
+  <project path="hardware/samsung/nfc" name="hardware_samsung_nfc" groups="pdk" remote="GenesisOS" />
+  <project path="hardware/st/nfc" name="hardware_st_nfc" groups="pdk" remote="GenesisOS" />
+
+  <!-- Legacy AOSP additions -->
+  <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" remote="aosp" revision="refs/tags/android-11.0.0_r46" />
+  <project path="hardware/qcom/sdm845/bt" name="platform/hardware/qcom/sdm845/bt" groups="generic_fs,qcom,qcom_sdm845" remote="aosp" revision="refs/tags/android-13.0.0_r75" />
+  <project path="hardware/qcom/sdm845/data/ipacfg-mgr" name="hardware_qcom_sdm845_data_ipacfg-mgr" groups="generic_fs,vendor,qcom,qcom_sdm845" remote="GenesisOS" >
+    <linkfile src="os_pickup.mk" dest="hardware/qcom/sdm845/Android.mk" />
+    <linkfile src="os_pickup.bp" dest="hardware/qcom/sdm845/Android.bp" />
+  </project>
+  <project path="hardware/qcom/sdm845/display" name="hardware_qcom_sdm845_display" groups="generic_fs,qcom,qcom_sdm845" remote="GenesisOS" />
+  <project path="hardware/qcom/sdm845/gps" name="hardware_qcom_sdm845_gps" groups="generic_fs,qcom,qcom_sdm845" remote="GenesisOS" />
+  <project path="hardware/qcom/sdm845/media" name="hardware_qcom_sdm845_media" groups="generic_fs,qcom,qcom_sdm845" remote="GenesisOS" />
+  <project path="hardware/qcom/sdm845/thermal" name="platform/hardware/qcom/sdm845/thermal" groups="generic_fs,qcom,qcom_sdm845" remote="aosp" revision="refs/tags/android-13.0.0_r75" />
+  <project path="hardware/qcom/sdm845/vr" name="platform/hardware/qcom/sdm845/vr" groups="generic_fs,qcom,qcom_sdm845" remote="aosp" revision="refs/tags/android-13.0.0_r75" />
+
+  <!-- kernel -->
+  <project path="kernel/configs" name="kernel_configs" groups="vts,pdk" remote="GenesisOS" />
+
+  <!-- manifest -->
+  <project path="manifest" name="manifest" remote="GenesisOS" />
+
+  <!-- packages -->
+  <project path="packages/apps/Aperture" name="packages_apps_Aperture" remote="GenesisOS" />
+  <project path="packages/apps/EmergencyInfo" name="packages_apps_EmergencyInfo" groups="pdk-fs" remote="GenesisOS" />
+  <project path="packages/apps/FMRadio" name="packages_apps_FMRadio" remote="GenesisOS" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="GenesisOS" />
+  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="GenesisOS" />
+  <project path="packages/modules/adb" name="packages_modules_adb" groups="pdk" remote="GenesisOS" />
+  <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" groups="pdk" remote="GenesisOS" />
+  <project path="packages/modules/common" name="packages_modules_common" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+  <project path="packages/modules/NetworkStack" name="packages_modules_NetworkStack" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+  <project path="packages/modules/Permission" name="packages_modules_Permission" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+  <project path="packages/modules/Wifi" name="packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="GenesisOS" />
+  <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+  <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="GenesisOS" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="GenesisOS" />
+
+  <!-- prebuilts -->
+  <project path="prebuilts/clang/kernel/linux-x86/clang-r416183b" name="prebuilts_clang_kernel_linux-x86_clang-r416183b" clone-depth="1" remote="GenesisOS" />
+  <project path="prebuilts/extract-tools" name="prebuilts_extract-tools" clone-depth="1" remote="GenesisOS" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" groups="pdk,linux,arm" clone-depth="1" remote="GenesisOS" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" groups="pdk,linux,arm" clone-depth="1" remote="GenesisOS" />
+  <project path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" name="prebuilts_gcc_linux-x86_x86_x86_64-linux-android-4.9" groups="pdk,linux,x86" clone-depth="1" remote="GenesisOS" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" revision="refs/tags/android-14.0.0_r0.76" />
+  <project path="prebuilts/tools-genesis" name="prebuilts_tools-genesis" clone-depth="1" remote="GenesisOS" />
+
+  <!-- scripts -->
+  <project path="lineage/scripts" name="scripts" groups="tools" remote="GenesisOS" />
+
+  <!-- sepolicy -->
+  <project path="device/genesis/sepolicy" name="device_genesis_sepolicy" remote="GenesisOS" />
+  <project path="device/mediatek/sepolicy_vndr" name="device_mediatek_sepolicy_vndr" remote="GenesisOS" />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy" groups="qcom,sdm660" remote="GenesisOS" revision="verve-legacy-um" />
+  <project path="device/qcom/sepolicy_vndr/legacy-um" name="device_qcom_sepolicy_vndr" groups="qcom,lahaina" remote="GenesisOS" revision="verve-legacy-um" />
+  <project path="device/qcom/sepolicy_vndr/sm8450" name="device_qcom_sepolicy_vndr" groups="qcom,waipio-vendor" remote="GenesisOS" revision="verve-caf-sm8450" />
+  <project path="device/qcom/sepolicy_vndr/sm8550" name="device_qcom_sepolicy_vndr" groups="qcom,kailua-vendor" remote="GenesisOS" revision="verve-caf-sm8550" />
+
+  <!-- system -->
+  <project path="system/bpf" name="system_bpf" groups="pdk" remote="GenesisOS" />
+  <project path="system/core" name="system_core" groups="pdk" remote="GenesisOS" />
+  <project path="system/extras" name="system_extras" groups="pdk" remote="GenesisOS" />
+  <project path="system/keymaster" name="system_keymaster" groups="pdk" remote="GenesisOS" />
+  <project path="system/libhidl" name="system_libhidl" groups="pdk,sysui-studio" remote="GenesisOS" />
+  <project path="system/libhwbinder" name="system_libhwbinder" groups="pdk" remote="GenesisOS" remote="GenesisOS" />
+  <project path="system/libziparchive" name="system_libziparchive" groups="pdk" remote="GenesisOS" />
+  <project path="system/logging" name="system_logging" groups="pdk" remote="GenesisOS" />
+  <project path="system/media" name="system_media" groups="pdk" remote="GenesisOS" />
+  <project path="system/netd" name="system_netd" groups="pdk" remote="GenesisOS" />
+  <project path="system/security" name="system_security" groups="pdk" remote="GenesisOS" />
+  <project path="system/sepolicy" name="system_sepolicy" groups="pdk" remote="GenesisOS" />
+  <project path="system/tools/mkbootimg" name="system_tools_mkbootimg" groups="pdk" remote="GenesisOS" />
+  <project path="system/update_engine" name="system_update_engine" groups="pdk" remote="GenesisOS" />
+  <project path="system/vold" name="system_vold" groups="pdk" remote="GenesisOS" />
+
+  <!-- tools -->
+  <project path="tools/extract-utils" name="tools_extract-utils" remote="GenesisOS" />
+
+  <!-- vendor -->
+  <project path="vendor/certification" name="vendor_certification" remote="GenesisOS-Gitea" remote="GenesisOS" />
+  <project path="vendor/codeaurora/telephony" name="vendor_codeaurora_telephony" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="vendor/genesis" name="vendor_genesis" remote="GenesisOS" />
+  <project path="vendor/google/overlays/ThemeIcons" name="vendor_google_overlays_ThemeIcons" remote="GenesisOS" />
+  <project path="vendor/gms" name="vendor_gms" remote="GenesisOS-Gitea" />
+  <project path="vendor/qcom/opensource/audio-hal/st-hal" name="vendor_qcom_opensource_audio-hal_st-hal" groups="qcom,lahaina" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/audio-hal/st-hal-ar" name="vendor_qcom_opensource_audio-hal_st-hal-ar" groups="qcom,lanai-audio" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/commonsys-intf/display" name="vendor_qcom_opensource_display-commonsys-intf" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/commonsys/display" name="vendor_qcom_opensource_display-commonsys" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/commonsys/fm" name="vendor_qcom_opensource_fm-commonsys" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/commonsys/wfd" name="vendor_qcom_opensource_wfd-commonsys" groups="qcom,lanai-video" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/core-utils-sys" name="vendor_qcom_opensource_core-utils-sys" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/core-utils-vendor" name="vendor_qcom_opensource_core-utils-vendor" groups="qcom,lanai-vendor" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um" name="vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,lahaina" remote="GenesisOS" revision="verve-legacy-um" />
+  <project path="vendor/qcom/opensource/dataservices" name="vendor_qcom_opensource_dataservices" groups="qcom,lanai-vendor" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/display" name="vendor_qcom_opensource_display" groups="qcom" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/healthd-ext" name="vendor_qcom_opensource_healthd-ext" groups="qcom,lanai-vendor" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" groups="qcom,qssi" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/libfmjni" name="vendor_qcom_opensource_libfmjni" groups="qcom" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/power" name="vendor_qcom_opensource_power" groups="qcom,lanai-vendor" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/thermal-engine" name="vendor_qcom_opensource_thermal-engine" groups="qcom,lanai-vendor" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/usb" name="vendor_qcom_opensource_usb" groups="qcom,lanai-vendor" remote="GenesisOS" />
+  <project path="vendor/qcom/opensource/vibrator" name="vendor_qcom_opensource_vibrator" groups="qcom,lanai-vendor" remote="GenesisOS" />
+
+</manifest>
